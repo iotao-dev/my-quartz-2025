@@ -1,5 +1,8 @@
 ---
-title: Welcome to Quartz
+title: 默认首页
+draft: false
+tags:
+  - Category/blog
 ---
 
 This is a blank Quartz installation.
