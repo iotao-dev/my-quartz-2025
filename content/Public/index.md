@@ -1,11 +1,8 @@
 ---
-title: 默认首页
+title: Welcome
 draft: false
 tags:
-  - Category/blog
+  - Category/MOC
 ---
-
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
-
-这是默认的首页，新增一个[[hello-world]]
+装修中，近期内容
+- [[使用Obsidian+Quartz+github+Cloudflare Pages搭建免费博客完整指南01]]
