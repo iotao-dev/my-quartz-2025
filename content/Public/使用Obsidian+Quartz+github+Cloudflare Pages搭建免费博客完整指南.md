@@ -7,6 +7,10 @@ draft:
 ---
 
 # 01 方案说明
+
+## 👀 效果预览
+- [预览网址](https://iotao.iwheel.lol/obsidian-publish)
+![[Pasted image 20250509115019.png]]
 ##  🗺 方案背景与适用人群 
 捣鼓这个方案主要出于个人需要，作为长期all in one模式使用obsidian进行日常记录的非技术背景用户，一直试图寻找符合以下需求的对外发布方案
 
