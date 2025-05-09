@@ -7,7 +7,7 @@ tags:
 draft: true
 ---
 
-上一篇： [[使用Obsidian+Quartz+github+Cloudflare Pages搭建免费博客完整指南01]]
+上一篇： [[使用Obsidian+Quartz+github+Cloudflare Pages搭建免费博客完整指南]]
 # ✅ 02 安装启用
 ### 安装Quartz 4
 - 整个安装过程基本参考官方的最新文档（[Welcome to Quartz 4](https://quartz.jzhao.xyz/)）的默认设置进行即可
@@ -43,6 +43,7 @@ baseUrl: "quartz.jzhao.xyz",
 #### 笔记
 - 修改笔记属性，可参考 [Authoring Content](https://quartz.jzhao.xyz/authoring-content)
 - 可以使用 `permalink`固定url，即使文件路径更改，该 URL 也将保持不变。
+	- permalink 填写字符而非完整url，并不会改变内部链接的模式，例如`https://iotao.iwheel.lol/obsidian-publish01` 会实际跳转到最新对应的文件名url `https://iotao.iwheel.lol/%E4%BD%BF%E7%94%A8Obsidian+Quartz+github+Cloudflare-Pages%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%9701`
 ![[Pasted image 20250506172429.png]]
 - 隐私控制
 	- [Private Pages](https://quartz.jzhao.xyz/features/private-pages#ignorepatterns
