@@ -5,4 +5,4 @@ tags:
   - Category/MOC
 ---
 装修中，近期内容
-- [[使用Obsidian+Quartz+github+Cloudflare Pages搭建免费博客完整指南]]
+- [[All in Obsidian的免费博客搭建方案]]

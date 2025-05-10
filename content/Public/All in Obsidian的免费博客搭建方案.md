@@ -8,9 +8,6 @@ draft:
 
 # 01 方案说明
 
-## 👀 效果预览
-- [预览网址](https://iotao.iwheel.lol/obsidian-publish)
-![[Pasted image 20250509115019.png]]
 ##  🗺 方案背景与适用人群 
 捣鼓这个方案主要出于个人需要，作为长期all in one模式使用obsidian进行日常记录的非技术背景用户，一直试图寻找符合以下需求的对外发布方案
 
@@ -106,6 +103,66 @@ npx quartz build --serve
 # 部署特定目录的内容如Public子目录
 npx quartz build --directory=content/Public --serve
 ```
+# 03 Github连接与推送
+## ⚙️ 设置过滤规则
+- 编辑 quartz安装目录下的`.gitignore`，加入需要过滤的文件规则，如果content目录中没有任何私有内容需要过滤可以略过此步骤
+- 以过滤除 `content/Public`目录以外所有文件为例
+```bash
+# 忽略 content 目录下的所有内容
+content/**
+
+# 不忽略 content/Public 目录
+!content/Public/
+
+# 不忽略 content/Public 目录下的所有内容
+!content/Public/**
+```
+## 🔗连接到个人Github
+- 登录[Github](https://github.com/new)并创建一个空的仓库，注意保持默认选项，不要初始化`README`, license, 或者 `gitignor`
+  ![[Pasted image 20250510112513.png]]
+- 复制该仓库的url `REMOTE-URL`
+- 参考文档： [Setting up your GitHub repository](https://quartz.jzhao.xyz/setting-up-your-GitHub-repository) 
+```bash
+# 在本地的quartz目录运行命令行将其设置为remote仓库的地址
+git remote set-url origin REMOTE-URL
+```
+
+## ⤴ 推送本地源码到Github
+- 每次有新内容需要发布时仅需要进行常规推送即可
+```bash
+# 首次推送
+npx quartz sync --no-pull
+
+# 常规推送
+npx quartz sync
+```
+
+# 04 Cloudflare Pages自动部署
+## ➡ 连接Github
+- 注册登录 Cloudflare Pages 后在 **Workers & Pages** > **Create application** > **Pages** 导入上一步创建的 Github仓库
+![[Pasted image 20250506170207.png]]
+![[Pasted image 20250506170328.png]]
+## 🌏 设置自动部署
+- Project name 会影响最终获取的免费域名
+- Build command 需要根据自己的需要填写，
+	- 发布所有 content目录中的内容：`npx quartz build` 
+	- 仅发布 `content/Public`：npx quartz build --directory=content/Public
+
+| Configuration option   | Value                                         |
+| ---------------------- | --------------------------------------------- |
+| Production branch      | `v4`                                          |
+| Framework preset       | `None`                                        |
+| Build command          | `npx quartz build --directory=content/Public` |
+| Build output directory | `public`                                      |
+![[Pasted image 20250510114837.png]]
+- 一分钟左右部署成功 ，此时访问Cloudflare Pages提供的网址即可，如果提示部署成功但是网址访问报错稍微等一会就OK了 
+- 设置完成后，每次从本地推送源码到githbu都会自动部署实现页面的更新
+- 参考文档 [Hosting](https://quartz.jzhao.xyz/hosting)
 
 ---
-<未完待续: 03 Github连接与发布>
+# Todo
+- 进阶使用
+	- 自定义域名
+	- 统计
+	- 评论
+- 考虑做一个简单的插件来管理设置、一键发布

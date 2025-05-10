@@ -7,7 +7,7 @@ tags:
 draft: true
 ---
 
-上一篇： [[使用Obsidian+Quartz+github+Cloudflare Pages搭建免费博客完整指南]]
+上一篇： [[All in Obsidian的免费博客搭建方案]]
 # ✅ 02 安装启用
 ### 安装Quartz 4
 - 整个安装过程基本参考官方的最新文档（[Welcome to Quartz 4](https://quartz.jzhao.xyz/)）的默认设置进行即可
